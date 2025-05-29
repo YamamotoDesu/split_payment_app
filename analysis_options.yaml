@@ -7,64 +7,17 @@
 
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
-include: package:flutter_lints/flutter.yaml
 include: package:very_good_analysis/analysis_options.yaml
 
-linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at https://dart.dev/lints.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
-  rules:
-    # Style rules
-    - camel_case_types
-    - prefer_single_quotes
-    - prefer_const_declarations
-    - prefer_const_constructors
-    - prefer_final_locals
-    - prefer_final_fields
-    - require_trailing_commas
-    - directives_ordering
-    - sort_pub_dependencies
-    - lines_longer_than_80_chars
-
-    # Error prevention
-    - avoid_print
-    - avoid_empty_else
-    - avoid_relative_lib_imports
-    - avoid_type_to_string
-    - avoid_types_as_parameter_names
-    - cancel_subscriptions
-    - close_sinks
-    - empty_catches
-    - unnecessary_null_checks
-    - unnecessary_nullable_for_final_variable_declarations
-
-    # Performance
-    - avoid_slow_async_io
-    - await_only_futures
-
-    # Very Good Analysis rules
-    public_member_api_docs: false 
-
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
-
 analyzer:
-  errors:
-    # Treat missing required parameters as errors
-    missing_required_param: error
-    # Treat missing returns as errors
-    missing_return: error
-    # Treat must be immutable warnings as errors
-    must_be_immutable: error
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "lib/generated/**"
+
+linter:
+  rules:
+    public_member_api_docs: false
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
