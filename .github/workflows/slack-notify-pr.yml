@@ -1,0 +1,33 @@
+name: Notify PR to Slack
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          custom_payload: |
+            {
+              "attachments": [{
+                "color": "good",
+                "author_name": "${{ github.actor }}",
+                "title": "New PR: ${{ github.event.pull_request.title }}",
+                "title_link": "${{ github.event.pull_request.html_url }}",
+                "text": "Repository: ${{ github.repository }}\nBranch: ${{ github.event.pull_request.head.ref }}\n\ncc: <@U087F2KTFC4> <@U08810XUFQQ>",
+                "fields": [
+                  {
+                    "title": "Status",
+                    "value": "Open",
+                    "short": true
+                  }
+                ]
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
