@@ -3,6 +3,8 @@ name: Notify PR to Slack
 on:
   pull_request:
     types: [opened, closed]
+  pull_request_review:
+    types: [submitted]
   issue_comment:
     types: [created]
   workflow_run:
@@ -12,6 +14,7 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
     steps:
       - name: Slack Notification
         uses: slackapi/slack-github-action@v1
@@ -23,11 +26,22 @@ jobs:
             {
               "attachments": [
                 {
-                  "color": "${{ github.event_name == 'pull_request' && github.event.action == 'opened' && 'good' || github.event_name == 'pull_request' && github.event.pull_request.merged && '#6f42c1' || github.event_name == 'issue_comment' && '#36a64f' || 'danger' }}",
+                  "color": "${{ github.event_name == 'pull_request' && github.event.action == 'opened' && 'good' || github.event_name == 'pull_request' && github.event.pull_request.merged && '#6f42c1' || github.event_name == 'pull_request_review' && github.event.review.state == 'approved' && '#36a64f' || github.event_name == 'issue_comment' && '#36a64f' || 'danger' }}",
                   "author_name": "${{ github.actor }}",
-                  "title": "${{ github.event_name == 'pull_request' && github.event.action == 'opened' && format('New PR: {0}', github.event.pull_request.title) || github.event_name == 'pull_request' && github.event.pull_request.merged && format('PR Merged: {0}', github.event.pull_request.title) || github.event_name == 'issue_comment' && format('New Comment on PR: {0}', github.event.issue.title) || format('CI Failed: {0}', github.event.workflow_run.name) }}",
+                  "title": "${{ 
+                    github.event_name == 'pull_request' && github.event.action == 'opened' && format('New PR: {0}', github.event.pull_request.title) || 
+                    github.event_name == 'pull_request' && github.event.pull_request.merged && format('PR Merged: {0}', github.event.pull_request.title) ||
+                    github.event_name == 'pull_request_review' && github.event.review.state == 'approved' && format('PR Approved: {0}', github.event.pull_request.title) ||
+                    github.event_name == 'issue_comment' && format('New Comment on PR: {0}', github.event.issue.title) ||
+                    format('CI Failed: {0}', github.event.workflow_run.name)
+                  }}",
                   "title_link": "${{ github.event.pull_request.html_url || github.event.comment.html_url || github.event.workflow_run.html_url }}",
-                  "text": "${{ github.event_name == 'pull_request' && format('Repository: {0}\nBranch: {1}', github.repository, github.event.pull_request.head.ref) || github.event_name == 'issue_comment' && github.event.comment.body || format('Workflow: {0}\nBranch: {1}', github.event.workflow_run.name, github.event.workflow_run.head_branch) }}\n\ncc: <@U087F2KTFC4> <@U08810XUFQQ>"
+                  "text": "${{ 
+                    github.event_name == 'pull_request' && format('Repository: {0}\nBranch: {1}', github.repository, github.event.pull_request.head.ref) ||
+                    github.event_name == 'pull_request_review' && format('Approved by {0}', github.actor) ||
+                    github.event_name == 'issue_comment' && github.event.comment.body ||
+                    format('Workflow: {0}\nBranch: {1}', github.event.workflow_run.name, github.event.workflow_run.head_branch)
+                  }}\n\ncc: <@U087F2KTFC4> <@U08810XUFQQ>"
                 }
               ]
             } 
