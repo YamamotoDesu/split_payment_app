@@ -5,6 +5,6 @@ reviewers:
   - YamamotoDesu
 
 # Settings for automatic assignee assignment
-addAssignees: true
+addAssignees: author
 assignees:
   - ${{ github.actor }} 
