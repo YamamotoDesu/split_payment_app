@@ -1,9 +1,10 @@
 # Settings for automatic reviewer assignment
 addReviewers: true
 reviewers:
-  - iOA-Holdings/mobile-dev
+  - Anirban-Deb-Tanu
+  - YamamotoDesu
 
 # Settings for automatic assignee assignment
-addAssignees: true 
+addAssignees: true
 assignees:
   - ${{ github.actor }} 
