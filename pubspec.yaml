@@ -18,22 +18,18 @@ dependencies:
   riverpod_annotation: ^2.6.1
 
 dev_dependencies:
-  # Testing
-  flutter_test:
-    sdk: flutter
-
-  # Linting and Analysis
+  # a tool for running code generators
+  build_runner: ^2.4.15
+  # import custom_lint too as riverpod_lint depends on it
   custom_lint: ^0.7.5
   flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+  # the code generator
+  riverpod_generator: ^2.6.5
   # riverpod_lint makes it easier to work with Riverpod
   riverpod_lint: ^2.6.5
   very_good_analysis: ^6.0.0
-
-  # Code Generation
-  # a tool for running code generators
-  build_runner: ^2.4.15
-  # the code generator
-  riverpod_generator: ^2.6.5
 
 flutter:
   uses-material-design: true
