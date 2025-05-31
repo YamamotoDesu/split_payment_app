@@ -2,7 +2,7 @@ name: Notify PR to Slack
 
 on:
   pull_request:
-    types: [opened, closed]
+    types: [opened, closed, ready_for_review]
   pull_request_review:
     types: [submitted]
   issue_comment:
@@ -14,7 +14,11 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
+    if: |
+      (github.event_name != 'pull_request' || 
+      (!github.event.pull_request.draft && github.event.action != 'closed') || 
+      (github.event.action == 'closed' && github.event.pull_request.merged) ||
+      github.event.action == 'ready_for_review')
     steps:
       - name: Slack Notification
         uses: slackapi/slack-github-action@v1
@@ -26,10 +30,17 @@ jobs:
             {
               "attachments": [
                 {
-                  "color": "${{ github.event_name == 'pull_request' && github.event.action == 'opened' && 'good' || github.event_name == 'pull_request' && github.event.pull_request.merged && '#6f42c1' || github.event_name == 'pull_request_review' && github.event.review.state == 'approved' && '#36a64f' || github.event_name == 'issue_comment' && '#36a64f' || 'danger' }}",
+                  "color": "${{ 
+                    github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'ready_for_review') && 'good' || 
+                    github.event_name == 'pull_request' && github.event.pull_request.merged && '#6f42c1' || 
+                    github.event_name == 'pull_request_review' && github.event.review.state == 'approved' && '#36a64f' || 
+                    github.event_name == 'issue_comment' && '#36a64f' || 
+                    'danger' 
+                  }}",
                   "author_name": "${{ github.actor }}",
                   "title": "${{ 
-                    github.event_name == 'pull_request' && github.event.action == 'opened' && format('New PR: {0}', github.event.pull_request.title) || 
+                    github.event_name == 'pull_request' && github.event.action == 'opened' && format('New PR: {0}', github.event.pull_request.title) ||
+                    github.event_name == 'pull_request' && github.event.action == 'ready_for_review' && format('PR Ready for Review: {0}', github.event.pull_request.title) ||
                     github.event_name == 'pull_request' && github.event.pull_request.merged && format('PR Merged: {0}', github.event.pull_request.title) ||
                     github.event_name == 'pull_request_review' && github.event.review.state == 'approved' && format('PR Approved: {0}', github.event.pull_request.title) ||
                     github.event_name == 'issue_comment' && format('New Comment on PR: {0}', github.event.issue.title) ||
