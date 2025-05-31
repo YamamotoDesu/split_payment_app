@@ -4,4 +4,6 @@ reviewers:
   - iOA-Holdings/mobile-dev
 
 # Settings for automatic assignee assignment
-addAssignees: author    # Automatically assign PR creator 
+addAssignees: true 
+assignees:
+  - ${{ github.actor }} 
