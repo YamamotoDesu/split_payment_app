@@ -12,22 +12,22 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: read
     steps:
-      - name: Notify Slack
-        uses: 8398a7/action-slack@v3
-        with:
-          status: custom
-          custom_payload: |
-            {
-              "attachments": [{
-                "color": "${{ github.event_name == 'pull_request' && github.event.action == 'opened' && 'good' || github.event_name == 'pull_request' && github.event.pull_request.merged && '#6f42c1' || github.event_name == 'issue_comment' && '#36a64f' || 'danger' }}",
-                "author_name": "${{ github.actor }}",
-                "title": "${{ github.event_name == 'pull_request' && github.event.action == 'opened' && format('New PR: {0}', github.event.pull_request.title) || github.event_name == 'pull_request' && github.event.pull_request.merged && format('PR Merged: {0}', github.event.pull_request.title) || github.event_name == 'issue_comment' && format('New Comment on PR: {0}', github.event.issue.title) || format('CI Failed: {0}', github.event.workflow_run.name) }}",
-                "title_link": "${{ github.event.pull_request.html_url || github.event.comment.html_url || github.event.workflow_run.html_url }}",
-                "text": "${{ github.event_name == 'pull_request' && format('Repository: {0}\nBranch: {1}', github.repository, github.event.pull_request.head.ref) || github.event_name == 'issue_comment' && github.event.comment.body || format('Workflow: {0}\nBranch: {1}', github.event.workflow_run.name, github.event.workflow_run.head_branch) }}\n\ncc: <@U087F2KTFC4> <@U08810XUFQQ>"
-              }]
-            }
+      - name: Slack Notification
+        uses: slackapi/slack-github-action@v1
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} 
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        with:
+          payload: |
+            {
+              "attachments": [
+                {
+                  "color": "${{ github.event_name == 'pull_request' && github.event.action == 'opened' && 'good' || github.event_name == 'pull_request' && github.event.pull_request.merged && '#6f42c1' || github.event_name == 'issue_comment' && '#36a64f' || 'danger' }}",
+                  "author_name": "${{ github.actor }}",
+                  "title": "${{ github.event_name == 'pull_request' && github.event.action == 'opened' && format('New PR: {0}', github.event.pull_request.title) || github.event_name == 'pull_request' && github.event.pull_request.merged && format('PR Merged: {0}', github.event.pull_request.title) || github.event_name == 'issue_comment' && format('New Comment on PR: {0}', github.event.issue.title) || format('CI Failed: {0}', github.event.workflow_run.name) }}",
+                  "title_link": "${{ github.event.pull_request.html_url || github.event.comment.html_url || github.event.workflow_run.html_url }}",
+                  "text": "${{ github.event_name == 'pull_request' && format('Repository: {0}\nBranch: {1}', github.repository, github.event.pull_request.head.ref) || github.event_name == 'issue_comment' && github.event.comment.body || format('Workflow: {0}\nBranch: {1}', github.event.workflow_run.name, github.event.workflow_run.head_branch) }}\n\ncc: <@U087F2KTFC4> <@U08810XUFQQ>"
+                }
+              ]
+            } 
