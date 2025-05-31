@@ -3,12 +3,20 @@ name: Notify PR to Slack
 on:
   pull_request_target:
     types: [opened]
+  pull_request_review_comment:
+    types: [created]
+  pull_request:
+    types: [closed]
+  workflow_run:
+    workflows: ["Flutter Lint"]
+    types: [completed]
 
 jobs:
-  notify:
+  notify-pr-opened:
+    if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
     steps:
-      - name: Notify Slack
+      - name: Notify Slack on PR Open
         uses: 8398a7/action-slack@v3
         with:
           status: custom
@@ -27,6 +35,69 @@ jobs:
                     "short": true
                   }
                 ]
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  notify-pr-comment:
+    if: github.event_name == 'pull_request_review_comment'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack on PR Comment
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          custom_payload: |
+            {
+              "attachments": [{
+                "color": "#36a64f",
+                "author_name": "${{ github.actor }}",
+                "title": "New Comment on PR: ${{ github.event.pull_request.title }}",
+                "title_link": "${{ github.event.comment.html_url }}",
+                "text": "Comment: ${{ github.event.comment.body }}\n\ncc: <@U087F2KTFC4> <@U08810XUFQQ>"
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  notify-pr-merged:
+    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack on PR Merge
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          custom_payload: |
+            {
+              "attachments": [{
+                "color": "#6f42c1",
+                "author_name": "${{ github.actor }}",
+                "title": "PR Merged: ${{ github.event.pull_request.title }}",
+                "title_link": "${{ github.event.pull_request.html_url }}",
+                "text": "Branch: ${{ github.event.pull_request.head.ref }} → ${{ github.event.pull_request.base.ref }}\n\ncc: <@U087F2KTFC4> <@U08810XUFQQ>"
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  notify-ci-failure:
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack on CI Failure
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          custom_payload: |
+            {
+              "attachments": [{
+                "color": "danger",
+                "author_name": "${{ github.actor }}",
+                "title": "CI Failed: ${{ github.event.workflow_run.name }}",
+                "title_link": "${{ github.event.workflow_run.html_url }}",
+                "text": "Workflow: ${{ github.event.workflow_run.name }}\nBranch: ${{ github.event.workflow_run.head_branch }}\n\ncc: <@U087F2KTFC4> <@U08810XUFQQ>"
               }]
             }
         env:
