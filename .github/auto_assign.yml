@@ -1,0 +1,7 @@
+# Settings for automatic reviewer assignment
+addReviewers: true
+reviewers:
+  - iOA-Holdings/mobile-dev
+
+# Settings for automatic assignee assignment
+addAssignees: author    # Automatically assign PR creator 
