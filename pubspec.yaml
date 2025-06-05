@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  flutter_flavorizr: ^2.4.1
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +35,29 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+flavorizr:
+  flavors:
+    development:
+      app:
+        name: "Development App"
+
+      android:
+        applicationId: "com.ioaholdings.mobile.dev"
+        # firebase:
+        #   config: ".firebase/development/google-services.json"
+      ios:
+        bundleId: "com.ioaholdings.mobile.dev" 
+        # firebase:
+        #   config: ".firebase/development/GoogleService-Info.plist"     
+    production:
+      app:
+        name: "Production App"
+
+      android:
+        applicationId: "com.ioaholdings.mobile.prd"
+        # firebase:
+        #   config: ".firebase/production/google-services.json"
+      ios:
+        bundleId: "com.ioaholdings.mobile.prd"
+        # firebase:
+        #   config: ".firebase/production/GoogleService-Info.plist"
