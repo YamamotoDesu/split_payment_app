@@ -43,8 +43,6 @@ class MyHomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locale = ref.watch(appLocaleProvider);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(context.l10n.appTitle),
