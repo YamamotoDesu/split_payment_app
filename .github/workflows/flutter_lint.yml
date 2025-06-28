@@ -25,8 +25,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
       
+      - name: Remove generated localization files
+        run: rm -f lib/l10n/app_localizations.dart lib/l10n/app_localizations_*.dart
+      
       - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed . --exclude=lib/l10n/app_localizations.dart,lib/l10n/app_localizations_*.dart
+        run: dart format --output=none --set-exit-if-changed .
       
       - name: Analyze project source
         run: flutter analyze
