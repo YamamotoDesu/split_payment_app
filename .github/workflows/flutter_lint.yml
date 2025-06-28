@@ -26,7 +26,9 @@ jobs:
         run: flutter pub get
       
       - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed lib/
+        run: |
+          # Format only manually created files, exclude generated files
+          find lib/ -name "*.dart" ! -name "app_localizations.dart" ! -name "app_localizations_*.dart" -exec dart format --output=none --set-exit-if-changed {} \;
       
       - name: Analyze project source
         run: flutter analyze
