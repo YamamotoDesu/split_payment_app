@@ -1,4 +1,4 @@
-package com.ioaholdings.mobile.team01
+package com.ioaholdings.mobile.splitpayment
 
 import io.flutter.embedding.android.FlutterActivity
 
