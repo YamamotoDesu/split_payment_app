@@ -79,3 +79,17 @@ To integrate Firebase with your Flutter app in this project, follow these steps 
 
 5. **Troubleshooting:**
    - If you encounter issues, refer to the [FlutterFire documentation](https://firebase.flutter.dev/docs/overview) and the [official Firebase setup guide for Flutter](https://firebase.google.com/docs/flutter/setup?platform=ios).
+
+## Firebase Configuration Files Explained
+
+### google-services.json (Android)
+- **Location:** `android/app/google-services.json`
+- **Purpose:** This file contains configuration data for your Android app to connect with Firebase services. It includes information such as your Firebase project number, project ID, API keys, and app-specific identifiers. The file is required for Firebase SDKs to initialize and communicate with your Firebase project on Android devices.
+- **How it's generated:** The file is generated when you register your Android app in the Firebase Console and download the configuration file. It should be placed in the `android/app/` directory of your Flutter project.
+
+### GoogleService-Info.plist (iOS)
+- **Location:** `ios/Runner/GoogleService-Info.plist`
+- **Purpose:** This file contains configuration data for your iOS app to connect with Firebase services. It includes your API key, project ID, app ID, and other identifiers required by Firebase SDKs to initialize and communicate with your Firebase project on iOS devices.
+- **How it's generated:** The file is generated when you register your iOS app in the Firebase Console and download the configuration file. It should be placed in the `ios/Runner/` directory of your Flutter project.
+
+> **Note:** Both files are essential for enabling Firebase features in your app. Do not share these files publicly, as they contain sensitive project information.
