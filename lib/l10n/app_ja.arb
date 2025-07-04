@@ -1,0 +1,16 @@
+{
+  "@@locale": "ja",
+  "appTitle": "割り勘アプリ",
+  "welcome": "ようこそ",
+  "addExpense": "支出を追加",
+  "expenseTitle": "支出タイトル",
+  "amount": "金額",
+  "save": "保存",
+  "cancel": "キャンセル",
+  "delete": "削除",
+  "edit": "編集",
+  "total": "合計",
+  "perPerson": "一人あたり",
+  "noExpenses": "支出がまだありません",
+  "addYourFirstExpense": "最初の支出を追加して始めましょう"
+} 

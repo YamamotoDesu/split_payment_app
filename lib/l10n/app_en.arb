@@ -1,0 +1,16 @@
+{
+  "@@locale": "en",
+  "appTitle": "Split Payment App",
+  "welcome": "Welcome",
+  "addExpense": "Add Expense",
+  "expenseTitle": "Expense Title",
+  "amount": "Amount",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "total": "Total",
+  "perPerson": "Per Person",
+  "noExpenses": "No expenses yet",
+  "addYourFirstExpense": "Add your first expense to get started"
+} 
