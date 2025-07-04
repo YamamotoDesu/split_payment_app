@@ -229,3 +229,29 @@ android/app/google-services.json
 
 # Firebase hosting
 .firebase/
+
+# Additional iOS/Xcode ignores (recommended for Flutter projects)
+# These are generated when running in Xcode or the simulator and should not be committed
+
+# Xcode workspace settings and user data
+**/ios/Runner.xcworkspace/
+**/ios/Runner.xcodeproj/xcuserdata/
+**/ios/Runner.xcworkspace/xcuserdata/
+*.xcuserstate
+
+# Xcode build output
+**/ios/build/
+
+# Flutter iOS ephemeral files (redundant with above, but explicit)
+ios/Flutter/ephemeral/
+
+# CocoaPods artifacts (already covered, but explicit)
+ios/Pods/
+ios/Podfile.lock
+
+# Simulator device support files
+**/ios/DeviceSupport/
+
+# Xcode preview support files
+**/ios/.swiftpm/
+**/ios/.package.resolved
