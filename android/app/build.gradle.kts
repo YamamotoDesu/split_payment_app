@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = ""
+    namespace = "com.ioaholdings.mobile.splitpayment"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
