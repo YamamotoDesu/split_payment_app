@@ -8,6 +8,23 @@
 - Flutter 3.32.0 or higher
 - Dart SDK 3.5.0 or higher
 
+### VS Code Extensions
+
+To enhance your development experience, we recommend installing the following VS Code extensions:
+
+- **Flutter** - Official Flutter extension for VS Code
+- **Dart** - Dart language support
+- **Flutter Intl** - Internationalization support for Flutter
+- **Error Lens** - Enhanced error reporting
+- **GitLens** - Enhanced Git capabilities
+- **Prettier** - Code formatter
+- **Bracket Pair Colorizer** - Colorized bracket pairs
+
+You can install these extensions by:
+1. Opening VS Code
+2. Going to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+3. Searching for each extension and clicking "Install"
+
 ### Flutter Version
 - Flutter: 3.32.0
 - Dart: 3.5.0
