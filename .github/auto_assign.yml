@@ -1,0 +1,10 @@
+# Settings for automatic reviewer assignment
+addReviewers: true
+reviewers:
+  - Anirban-Deb-Tanu
+  - YamamotoDesu
+
+# Settings for automatic assignee assignment
+addAssignees: author
+assignees:
+  - ${{ github.actor }} 

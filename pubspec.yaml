@@ -7,23 +7,54 @@ environment:
   sdk: '>=3.5.0 <4.0.0'
 
 dependencies:
+  # Flutter SDK
+  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+  # the annotation package containing @riverpod
+  riverpod_annotation: ^2.6.1
+
+  # Data Classes
+  freezed_annotation: ^3.0.0
+  json_annotation: ^4.9.0
+  dartz: ^0.10.1
 
 dev_dependencies:
+  # Testing
   flutter_test:
     sdk: flutter
+
+  # Linting and Analysis
+  custom_lint: ^0.7.5
   flutter_lints: ^5.0.0
+
   flutter_flavorizr: ^2.4.1
+
+  # riverpod_lint makes it easier to work with Riverpod
+  riverpod_lint: ^2.6.5
+  very_good_analysis: ^6.0.0
+
+  # Code Generation
+  # a tool for running code generators
+  build_runner: ^2.4.15
+  # the code generator
+  riverpod_generator: ^2.6.5
+  freezed: ^3.0.6
+  json_serializable: ^6.8.0
+  intl_utils: ^2.8.5
+
 
 flutter:
   uses-material-design: true
-
+  generate: true
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
   # fonts:
   #   - family: Schyler
   #     fonts:
@@ -35,6 +66,7 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+
 flavorizr:
   flavors:
     development:
@@ -61,3 +93,7 @@ flavorizr:
         bundleId: "com.ioaholdings.mobile.prd"
         # firebase:
         #   config: ".firebase/production/GoogleService-Info.plist"
+
+flutter_intl:
+  enabled: true
+
