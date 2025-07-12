@@ -23,8 +23,8 @@ class App extends StatelessWidget {
           color: Colors.green.withAlpha(150),
           textStyle: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 12.0,
-            letterSpacing: 1.0,
+            fontSize: 12,
+            letterSpacing: 1,
           ),
           textDirection: TextDirection.ltr,
           child: child,
