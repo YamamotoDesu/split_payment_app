@@ -1,4 +1,4 @@
-package com.example.split_payment_app
+package com.ioaholdings.mobile.splitpayment
 
 import io.flutter.embedding.android.FlutterActivity
 
