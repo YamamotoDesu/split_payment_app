@@ -12,7 +12,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: F.title,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: _flavorBanner(child: MyHomePage(), show: kDebugMode),
+      home: _flavorBanner(child: const MyHomePage(), show: kDebugMode),
     );
   }
 
@@ -21,7 +21,7 @@ class App extends StatelessWidget {
           location: BannerLocation.topStart,
           message: F.name,
           color: Colors.green.withAlpha(150),
-          textStyle: TextStyle(
+          textStyle: const TextStyle(
             fontWeight: FontWeight.w700,
             fontSize: 12,
             letterSpacing: 1,
