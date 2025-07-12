@@ -7,7 +7,6 @@ Step 2: Log into Firebase using your Google account by running the following com
 firebase login
 
 Step 3: Install the FlutterFire CLI by running the following command from any directory:
-
 dart pub global activate flutterfire_cli
 
 Step 4: flutterfire configure
@@ -38,7 +37,6 @@ Step 5: Run the following code in the project directory:
 3. flutter pub add firebase_core
 4. Add the required code for Firebase in main.dart
 5. fvm flutter run
-
 
 
 ## Firebase Configuration for Flutter
@@ -93,3 +91,31 @@ To integrate Firebase with your Flutter app in this project, follow these steps 
 - **How it's generated:** The file is generated when you register your iOS app in the Firebase Console and download the configuration file. It should be placed in the `ios/Runner/` directory of your Flutter project.
 
 > **Note:** Both files are essential for enabling Firebase features in your app. Do not share these files publicly, as they contain sensitive project information.
+
+
+### VS Code Extensions
+
+To enhance your development experience, we recommend installing the following VS Code extensions:
+
+- **Flutter** - Official Flutter extension for VS Code
+- **Dart** - Dart language support
+- **Flutter Intl** - Internationalization support for Flutter
+- **Error Lens** - Enhanced error reporting
+- **GitLens** - Enhanced Git capabilities
+- **Prettier** - Code formatter
+- **Bracket Pair Colorizer** - Colorized bracket pairs
+
+You can install these extensions by:
+1. Opening VS Code
+2. Going to Extensions (Ctrl+Shift+X / Cmd+Shift+X)
+3. Searching for each extension and clicking "Install"
+
+### Flutter Version
+- Flutter: 3.32.0
+- Dart: 3.5.0
+
+
+
+
+
+
