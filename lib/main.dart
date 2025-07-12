@@ -63,8 +63,6 @@ class MyHomePage extends ConsumerWidget {
               context.l10n.welcome,
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Text(context.l10n.productionApp),
-            Text(context.l10n.developmentApp),
             const SizedBox(height: 20),
             Text(
               context.l10n.addYourFirstExpense,
