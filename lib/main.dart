@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:split_payment_app/src/shared/extensions/i18n_extension.dart';
-import 'package:split_payment_app/flavors.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:split_payment_app/flavors.dart';
 import 'package:split_payment_app/l10n/app_localizations.dart';
+import 'package:split_payment_app/src/shared/extensions/i18n_extension.dart';
 import 'package:split_payment_app/src/shared/providers/locale_provider.dart';
+
 
 void main() async {
   F.appFlavor = Flavor.values.firstWhere(
