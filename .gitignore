@@ -120,3 +120,44 @@ app.*.symbols
 
 # FVM Version Cache
 .fvm/
+
+###################################### For flutter_flavorizr ######################################
+# Flutter/Dart general ignores
+.dart_tool/
+.packages
+.pub-cache/
+build/
+.idea/
+.vscode/
+*.iml
+
+# Flutter environment files
+.env
+
+# Generated flavor files (if generated via flutter_flavorizr)
+lib/flavors/
+android/app/src/*/ # Flavor-specific source sets
+ios/Runner/Flavor/ # If using flavor folder structure
+
+# Ignore Flutter/Dart specific files
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+.metadata
+
+# Xcode
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+
+# Android
+android/.gradle/
+android/local.properties
+android/app/*.keystore
+
+# VS Code
+.vscode/
+
+# Output folders
+outputs/

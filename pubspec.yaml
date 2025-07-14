@@ -32,6 +32,9 @@ dev_dependencies:
   # Linting and Analysis
   custom_lint: ^0.7.5
   flutter_lints: ^5.0.0
+
+  flutter_flavorizr: ^2.4.1
+
   # riverpod_lint makes it easier to work with Riverpod
   riverpod_lint: ^2.6.5
   very_good_analysis: ^6.0.0
@@ -44,6 +47,7 @@ dev_dependencies:
   freezed: ^3.0.6
   json_serializable: ^6.8.0
   intl_utils: ^2.8.5
+
 
 flutter:
   uses-material-design: true
@@ -62,5 +66,34 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+
+flavorizr:
+  flavors:
+    development:
+      app:
+        name: "Development App"
+
+      android:
+        applicationId: "com.ioaholdings.mobile.dev"
+        # firebase:
+        #   config: ".firebase/development/google-services.json"
+      ios:
+        bundleId: "com.ioaholdings.mobile.dev" 
+        # firebase:
+        #   config: ".firebase/development/GoogleService-Info.plist"     
+    production:
+      app:
+        name: "Production App"
+
+      android:
+        applicationId: "com.ioaholdings.mobile.prd"
+        # firebase:
+        #   config: ".firebase/production/google-services.json"
+      ios:
+        bundleId: "com.ioaholdings.mobile.prd"
+        # firebase:
+        #   config: ".firebase/production/GoogleService-Info.plist"
+
 flutter_intl:
   enabled: true
+
