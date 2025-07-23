@@ -690,7 +690,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.splitPaymentApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -745,10 +745,53 @@
 			};
 			name = Profile;
 		};
+		5AC32BEF2E304A1200EEBF16 /* Debug-development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-development";
+		};
+		5AC32BF02E304A1200EEBF16 /* Profile-development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-development";
+		};
+		5AC32BF12E304A1200EEBF16 /* Release-development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-development";
+		};
+		5AC32BF22E304A1200EEBF16 /* Debug-production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-production";
+		};
+		5AC32BF32E304A1200EEBF16 /* Profile-production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-production";
+		};
+		5AC32BF42E304A1200EEBF16 /* Release-production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-production";
+		};
 		5EB2BEF77254E4C6FF1D30BB /* Release-production */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73030F2F3B39FE17FAF5DCA6 /* productionRelease.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.prd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Release-production";
@@ -832,6 +875,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5F163EA3670708547506CBC /* developmentProfile.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Profile-development";
@@ -961,7 +1005,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.splitPaymentApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -984,7 +1028,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.splitPaymentApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -996,6 +1040,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33A82203B010F236C8BF1E48 /* productionProfile.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.prd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Profile-production";
@@ -1074,6 +1119,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C169E0C2AF88FEB8E6F7C32 /* developmentRelease.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Release-development";
@@ -1082,6 +1128,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92F7F5F93CECCA17E1A0733D /* productionDebug.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.prd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Debug-production";
@@ -1090,6 +1137,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DCF66E0CD7BF73C3075699E /* developmentDebug.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Debug-development";
@@ -1103,6 +1151,12 @@
 				331C8088294A63A400263BE5 /* Debug */,
 				331C8089294A63A400263BE5 /* Release */,
 				331C808A294A63A400263BE5 /* Profile */,
+				5AC32BEF2E304A1200EEBF16 /* Debug-development */,
+				5AC32BF02E304A1200EEBF16 /* Profile-development */,
+				5AC32BF12E304A1200EEBF16 /* Release-development */,
+				5AC32BF22E304A1200EEBF16 /* Debug-production */,
+				5AC32BF32E304A1200EEBF16 /* Profile-production */,
+				5AC32BF42E304A1200EEBF16 /* Release-production */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
