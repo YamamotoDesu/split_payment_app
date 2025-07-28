@@ -1,10 +1,10 @@
 name: split_payment_app
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.5.0 <4.0.0'
+  sdk: ">=3.5.0 <4.0.0"
 
 dependencies:
   # Flutter SDK
@@ -23,6 +23,7 @@ dependencies:
   freezed_annotation: ^3.0.0
   json_annotation: ^4.9.0
   dartz: ^0.10.1
+  firebase_core: ^4.0.0
 
 dev_dependencies:
   # Testing
@@ -47,7 +48,6 @@ dev_dependencies:
   freezed: ^3.0.6
   json_serializable: ^6.8.0
   intl_utils: ^2.8.5
-
 
 flutter:
   uses-material-design: true
@@ -74,26 +74,25 @@ flavorizr:
         name: "Development App"
 
       android:
-        applicationId: "com.ioaholdings.mobile.dev"
+        applicationId: "com.ioaholdings.mobile.splitpayment.dev"
         # firebase:
         #   config: ".firebase/development/google-services.json"
       ios:
-        bundleId: "com.ioaholdings.mobile.dev" 
+        bundleId: "com.ioaholdings.mobile.splitpayment.dev"
         # firebase:
-        #   config: ".firebase/development/GoogleService-Info.plist"     
+        #   config: ".firebase/development/GoogleService-Info.plist"
     production:
       app:
         name: "Production App"
 
       android:
-        applicationId: "com.ioaholdings.mobile.prd"
+        applicationId: "com.ioaholdings.mobile.splitpayment.prd"
         # firebase:
         #   config: ".firebase/production/google-services.json"
       ios:
-        bundleId: "com.ioaholdings.mobile.prd"
+        bundleId: "com.ioaholdings.mobile.splitpayment.prd"
         # firebase:
         #   config: ".firebase/production/GoogleService-Info.plist"
 
 flutter_intl:
   enabled: true
-
