@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:split_payment_app/flavors.dart';
 import 'package:split_payment_app/pages/my_home_page.dart';
 

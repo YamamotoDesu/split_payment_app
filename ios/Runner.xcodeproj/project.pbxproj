@@ -242,6 +242,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
 			buildPhases = (
+				AED0EFC4493EFEDA4EB69D69 /* Firebase Setup */,
 				C2A81AC4CAD923ECA1E98C0C /* [CP] Check Pods Manifest.lock */,
 				9740EEB61CF901F6004384FC /* Run Script */,
 				97C146EA1CF9000F007C117D /* Sources */,
@@ -382,6 +383,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+		};
+		AED0EFC4493EFEDA4EB69D69 /* Firebase Setup */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Firebase Setup";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Runner/GoogleService-Info.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" == \"Debug-development\" ] || [ \"$CONFIGURATION\" == \"Release-development\" ]; then\n  cp Runner/development/GoogleService-Info.plist Runner/GoogleService-Info.plist\nelif [ \"$CONFIGURATION\" == \"Debug-production\" ] || [ \"$CONFIGURATION\" == \"Release-production\" ]; then\n  cp Runner/production/GoogleService-Info.plist Runner/GoogleService-Info.plist\nfi\n\n";
 		};
 		C2A81AC4CAD923ECA1E98C0C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -937,7 +957,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73030F2F3B39FE17FAF5DCA6 /* productionRelease.xcconfig */;
 			buildSettings = {
-				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.prd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Release-production";
@@ -1021,7 +1040,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5F163EA3670708547506CBC /* developmentProfile.xcconfig */;
 			buildSettings = {
-				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Profile-development";
@@ -1186,7 +1204,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 33A82203B010F236C8BF1E48 /* productionProfile.xcconfig */;
 			buildSettings = {
-				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.prd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Profile-production";
@@ -1265,7 +1282,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C169E0C2AF88FEB8E6F7C32 /* developmentRelease.xcconfig */;
 			buildSettings = {
-				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Release-development";
@@ -1274,7 +1290,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92F7F5F93CECCA17E1A0733D /* productionDebug.xcconfig */;
 			buildSettings = {
-				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.prd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Debug-production";
@@ -1283,7 +1298,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DCF66E0CD7BF73C3075699E /* developmentDebug.xcconfig */;
 			buildSettings = {
-				PRODUCT_BUNDLE_IDENTIFIER = com.ioaholdings.mobile.splitpayment.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Debug-development";

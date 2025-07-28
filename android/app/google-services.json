@@ -26,7 +26,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:564642241108:android:78a7a9a8bcd1d3a95b2bc1",
+        "mobilesdk_app_id": "1:564642241108:android:43e8da3b22dcfe1e5b2bc1",
         "android_client_info": {
           "package_name": "com.ioaholdings.mobile.splitpayment.dev"
         }
@@ -45,7 +45,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:564642241108:android:78a7a9a8bcd1d3a95b2bc1",
+        "mobilesdk_app_id": "1:564642241108:android:3c2621a77a9a34245b2bc1",
         "android_client_info": {
           "package_name": "com.ioaholdings.mobile.splitpayment.prd"
         }

@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAgKUSKvX7ZkHgMh4yvkBnWHMT5_KYe4IU',
-    appId: '1:564642241108:android:78a7a9a8bcd1d3a95b2bc1',
+    appId: '1:564642241108:android:3c2621a77a9a34245b2bc1',
     messagingSenderId: '564642241108',
     projectId: 'mobile-app-stg-50d79',
     storageBucket: 'mobile-app-stg-50d79.firebasestorage.app',
@@ -59,10 +59,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCvnAGFT-4Bs3ejm3rQJb_PINS6DkVVgLs',
-    appId: '1:564642241108:ios:238336667e96b8cf5b2bc1',
+    appId: '1:564642241108:ios:256f1bf037c7affe5b2bc1',
     messagingSenderId: '564642241108',
     projectId: 'mobile-app-stg-50d79',
     storageBucket: 'mobile-app-stg-50d79.firebasestorage.app',
-    iosBundleId: 'com.ioaholdings.mobile.splitpayment.dev',
+    iosBundleId: 'com.ioaholdings.mobile.splitpayment.prd',
   );
+
 }
