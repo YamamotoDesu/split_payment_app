@@ -242,8 +242,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
 			buildPhases = (
-				AED0EFC4493EFEDA4EB69D69 /* Firebase Setup */,
 				C2A81AC4CAD923ECA1E98C0C /* [CP] Check Pods Manifest.lock */,
+				AED0EFC4493EFEDA4EB69D69 /* Firebase Setup */,
 				9740EEB61CF901F6004384FC /* Run Script */,
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
