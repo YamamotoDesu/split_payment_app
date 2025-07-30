@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ioaholdings.mobile.splitpayment.dev</string>
+	<string>com.ioaholdings.mobile.splitpayment.prd</string>
 	<key>PROJECT_ID</key>
 	<string>mobile-app-stg-50d79</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:564642241108:ios:388d5dd906203c0f5b2bc1</string>
+	<string>1:564642241108:ios:256f1bf037c7affe5b2bc1</string>
 </dict>
 </plist>
